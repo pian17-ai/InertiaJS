@@ -1,15 +1,15 @@
-import { Head } from "@inertiajs/react"
-
-<Head>
-    <title>Dashboard</title>
-</Head>
+import { Head } from "@inertiajs/react";
 
 function DashboardPage() {
-  return (
-    <div>
-      Ini Dashboard Admin
-    </div>
-  )
+    return (
+        <>
+            <Head>
+                <title>Dashboard</title>
+            </Head>
+
+            <div>Ini Dashboard Admin</div>
+        </>
+    );
 }
 
-export default DashboardPage
+export default DashboardPage;

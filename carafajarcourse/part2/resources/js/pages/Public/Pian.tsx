@@ -11,6 +11,4 @@ function Pian() {
     );
 }
 
-Pian.layout = (page: any) => <PublicLayout>{page}</PublicLayout>;
-
 export default Pian;

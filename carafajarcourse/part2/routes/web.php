@@ -3,7 +3,10 @@
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 
-Route::inertia('/', 'Pian');
+Route::get('/', function() {
+    sleep(1);
+    return Inertia::render('Public/Pian');
+});
 
 // Route::inertia('/users', 'Student/AllPage');
 Route::get('/student', function() {
@@ -15,6 +18,7 @@ Route::get('/student', function() {
         'university' => 'Universitas Indonesia'
     ];
 
+    sleep(1);
     return Inertia::render('Public/Student/AllPage', [
         'student' => $student
     ]);
@@ -22,5 +26,6 @@ Route::get('/student', function() {
 });
 
 Route::get('/admin', function() {
+    sleep(1);
     return Inertia::render('Admin/DashboardPage');
 });

@@ -7,6 +7,7 @@ function AllPage({ student }: AllStudentProps) {
         <>
             <Head>
                 <title>Students</title>
+                <meta name="description" content="All students from Faculty of Computer Science, Universitas Indonesia" />
             </Head>
 
             <div className="h-full w-full p-3">
@@ -22,7 +23,5 @@ function AllPage({ student }: AllStudentProps) {
         </>
     );
 }
-
-AllPage.layout = (page: any) => <PublicLayout>{page}</PublicLayout>;
 
 export default AllPage;
