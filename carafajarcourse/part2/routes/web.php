@@ -15,8 +15,12 @@ Route::get('/student', function() {
         'university' => 'Universitas Indonesia'
     ];
 
-    return Inertia::render('Student/AllPage', [
+    return Inertia::render('Public/Student/AllPage', [
         'student' => $student
     ]);
     // return inertia('Student/AllPage');
+});
+
+Route::get('/admin', function() {
+    return Inertia::render('Admin/DashboardPage');
 });
