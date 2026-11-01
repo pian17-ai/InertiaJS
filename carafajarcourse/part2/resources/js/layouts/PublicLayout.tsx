@@ -10,7 +10,7 @@ function PublicLayout({ children }: any) {
                         <Link href={"/"}>Home</Link>
                     </li>
                     <li className="px-2 mr-2 bg-slate-800 rounded-md">
-                        <Link href={"/student"}>Student</Link>
+                        <Link href={"/users"}>User</Link>
                     </li>
                     <li className="px-2 bg-slate-800 rounded-md">
                         <Link href={"/admin"}>Admin</Link>
