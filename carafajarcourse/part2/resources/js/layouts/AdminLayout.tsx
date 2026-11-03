@@ -12,6 +12,9 @@ function AdminLayout({ children }: any) {
                     <li className="px-2 mr-2 bg-slate-800 rounded-md">
                         <Link href={"/users"}>Student</Link>
                     </li>
+                    <li className="px-2 mr-2 bg-slate-800 rounded-md">
+                        <Link href={"/posts"}>Post</Link>
+                    </li>
                     <li className="px-2 bg-slate-800 rounded-md">
                         <Link href={"/admin"}>Admin</Link>
                     </li>

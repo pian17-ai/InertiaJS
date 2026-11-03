@@ -1,5 +1,5 @@
 import PublicLayout from "@/layouts/PublicLayout";
-import { AllStudentProps, Student } from "@/types/student/student";
+import { AllStudentProps, Student } from "@/types/student";
 import { Head, Link, router } from "@inertiajs/react";
 
 function goToAddUser() {
