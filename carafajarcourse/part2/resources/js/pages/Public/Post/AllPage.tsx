@@ -30,7 +30,7 @@ function AllPage({ posts }: AllPostProps) {
                             <div key={post.id} className="p-4 mt-2 rounded-xl bg-gray-800">
                                 <div className="w-full">
                                     <img
-                                        src={post.img}
+                                        src={`/storage/${post.img}`}
                                         alt=""
                                     />
                                 </div>

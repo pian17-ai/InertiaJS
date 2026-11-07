@@ -13,7 +13,10 @@ Route::get('/users', [UserController::class, 'index'])->name('user');
 Route::get('/users/add', [UserController::class, 'add']);
 Route::post('/users', [UserController::class, 'store']);
 
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index'])->name('post');
+Route::get('/posts/add', [PostController::class, 'add']);
+Route::get('/posts/{slug}', [PostController::class, 'show']);
+Route::post('/posts', [PostController::class, 'store']);
 
 Route::get('/admin', function() {
     return Inertia::render('Admin/DashboardPage');

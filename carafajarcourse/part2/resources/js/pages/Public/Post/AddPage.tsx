@@ -1,24 +1,26 @@
-import { Head, router, useForm } from "@inertiajs/react"
+import { PostForm } from "@/types/post";
+import { Head, router, useForm } from "@inertiajs/react";
 import { FormEvent } from "react";
 
 function AddPage() {
-  const {data, setData, post, errors, processing} = useForm({
-    title: "",
-    description: "",
-    img: null
-  });
+    const { data, setData, post, errors, progress, processing } =
+        useForm<PostForm>({
+            title: "",
+            description: "",
+            img: null,
+        });
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();-
-    post('/pages');
-  }
+    function handleSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        post("/posts");
+    }
 
-  function backToAll() {
-    router.get('/posts')
-  }
+    function backToAll() {
+        router.get("/posts");
+    }
 
-  return (
-    <>
+    return (
+        <>
             <Head>
                 <title>Students</title>
                 <meta
@@ -49,7 +51,7 @@ function AddPage() {
                         <input
                             id="title"
                             className="border border-slate-500 mb-2 rounded-md p-1"
-                            type="number"
+                            type="text"
                             name="title"
                             value={data.title}
                             onChange={(e) => setData("title", e.target.value)}
@@ -66,7 +68,9 @@ function AddPage() {
                             type="text"
                             name="name"
                             value={data.description}
-                            onChange={(e) => setData("description", e.target.value)}
+                            onChange={(e) =>
+                                setData("description", e.target.value)
+                            }
                         />
                         <label htmlFor="img">Image</label>
                         {errors.img && (
@@ -75,26 +79,32 @@ function AddPage() {
                             </div>
                         )}
                         <input
-                            id="img"
-                            className="border border-slate-500 mb-2 rounded-md p-1"
                             type="file"
-                            name="img"
-                            onChange={(e) =>
-                                setData("img", e.target.files[0])
-                            }
+                            onChange={(e) => {
+                                const file = e.target.files?.[0];
+
+                                if (file) {
+                                    setData("img", file);
+                                }
+                            }}
                         />
+                        {progress && (
+                            <progress value={progress.percentage} max="100">
+                                {progress.percentage}%
+                            </progress>
+                        )}
                         <button
                             disabled={processing}
                             className="px-2 py-1 mt-2 rounded-xl bg-slate-400 text-black font-bold"
                             type="submit"
                         >
-                            Create User
+                            Add Post
                         </button>
                     </form>
                 </div>
             </div>
         </>
-  )
+    );
 }
-    
-export default AddPage
+
+export default AddPage;
